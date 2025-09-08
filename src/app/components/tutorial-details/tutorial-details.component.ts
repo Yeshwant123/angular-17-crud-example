@@ -12,9 +12,8 @@ export class TutorialDetailsComponent implements OnInit {
   @Input() viewMode = false;
 
   @Input() currentTutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+    role: '',
+    name: '',
   };
 
   message = '';
@@ -44,9 +43,8 @@ export class TutorialDetailsComponent implements OnInit {
 
   updatePublished(status: boolean): void {
     const data = {
-      title: this.currentTutorial.title,
-      description: this.currentTutorial.description,
-      published: status
+      title: this.currentTutorial.role,
+      description: this.currentTutorial.name,
     };
 
     this.message = '';
@@ -54,7 +52,6 @@ export class TutorialDetailsComponent implements OnInit {
     this.tutorialService.update(this.currentTutorial.id, data).subscribe({
       next: (res) => {
         console.log(res);
-        this.currentTutorial.published = status;
         this.message = res.message
           ? res.message
           : 'The status was updated successfully!';

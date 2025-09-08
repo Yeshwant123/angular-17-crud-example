@@ -2,11 +2,11 @@
   @if (currentTutorial.id){
   <h4>Tutorial</h4>
   <div>
-    <label><strong>Title:</strong></label> {{ currentTutorial.title }}
+    <label><strong>Title:</strong></label> {{ currentTutorial.role }}
   </div>
   <div>
     <label><strong>Description:</strong></label>
-    {{ currentTutorial.description }}
+    {{ currentTutorial.name }}
   </div>
   <div>
     <label><strong>Status:</strong></label>
@@ -28,7 +28,7 @@
           type="text"
           class="form-control"
           id="title"
-          [(ngModel)]="currentTutorial.title"
+          [(ngModel)]="currentTutorial.role"
           name="title"
         />
       </div>
@@ -38,7 +38,7 @@
           type="text"
           class="form-control"
           id="description"
-          [(ngModel)]="currentTutorial.description"
+          [(ngModel)]="currentTutorial.name"
           name="description"
         />
       </div>

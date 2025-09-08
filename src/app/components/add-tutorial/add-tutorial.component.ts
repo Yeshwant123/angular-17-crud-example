@@ -9,9 +9,9 @@ import { TutorialService } from '../../services/tutorial.service';
 })
 export class AddTutorialComponent {
   tutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+    name: '',
+    role: '',
+    salary: 1.0
   };
   submitted = false;
 
@@ -19,8 +19,8 @@ export class AddTutorialComponent {
 
   saveTutorial(): void {
     const data = {
-      title: this.tutorial.title,
-      description: this.tutorial.description
+      name: this.tutorial.name,
+      role: this.tutorial.role
     };
 
     this.tutorialService.create(data).subscribe({
@@ -35,9 +35,9 @@ export class AddTutorialComponent {
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
-      title: '',
-      description: '',
-      published: false
+      name: '',
+      role: '',
+      salary: 1.0
     };
   }
 }
