@@ -62,7 +62,7 @@ export class TutorialDetailsComponent implements OnInit {
 
   updateTutorial(): void {
     this.message = '';
-//test
+//test 1
     this.tutorialService
       .update(this.currentTutorial.id, this.currentTutorial)
       .subscribe({
